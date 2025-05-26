@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.securityscanner.app.MainController">
+
+    <top>
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+            <Label text="URL:"/>
+            <TextField fx:id="urlField" prefWidth="400"/>
+            <Button text="Gerar Relatório" onAction="#generateReport"/>
+            <Button text="Gerar PDF" onAction="#generatePDF"/>
+            <Button text="Ver Gráfico" onAction="#showGraph"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TextArea fx:id="logArea" prefHeight="400.0" prefWidth="600.0"/>
+    </center>
+
+    <left>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+            <Button text="Scanner de Cabeçalhos" onAction="#runHeaderScan"/>
+            <Button text="Port Scanner" onAction="#runPortScan"/>
+            <Button text="Busca de Diretórios" onAction="#runDirScan"/>
+            <Button text="Fingerprint" onAction="#runFingerprint"/>
+            <Button text="Busca de CVEs" onAction="#runCveSearch"/>
+            <Button text="Subdomain Scanner" onAction="#runSubdomainScan"/>
+            <Button text="SSL Scan" onAction="#runSSLScan"/>
+            <Button text="Busca de Arquivos Sensíveis" onAction="#runFileScan"/>
+            <Button text="Verificar Cookies" onAction="#runCookieCheck"/>
+        </VBox>
+    </left>
+
+</BorderPane>
